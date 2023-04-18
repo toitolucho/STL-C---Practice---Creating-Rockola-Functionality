@@ -10,5 +10,8 @@ class Artista
     Genero genero;
 
     public :
-    void verInfo();
-}
+    void verInfo()
+    {
+
+    }
+};
