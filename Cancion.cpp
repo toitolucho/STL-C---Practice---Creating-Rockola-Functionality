@@ -39,8 +39,9 @@ class Cancion
     }
     void verInfo()
     {
-
+        cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<endl;
     }
+
     string getTitulo()
     {
         return titulo;

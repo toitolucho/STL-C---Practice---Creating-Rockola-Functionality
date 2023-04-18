@@ -19,7 +19,7 @@ public:
     void eliminarCancion(int nroCancion)
     {
         //quite una cacnion en funcion a la posicion de la cancion
-
+        //listaCanciones.erase
     }
     void verLista()
     {

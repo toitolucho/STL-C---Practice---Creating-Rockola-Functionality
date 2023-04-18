@@ -7,7 +7,10 @@ void imprimirRocola(vector<Cancion> lista)
 {
     for(int i = 0; i<lista.size(); i++)
     {
-        cout<<lista[i].getTitulo()<<endl;
+        // cout<<lista[i].getTitulo()<<
+        //     lista[i].getDuracion().minutos<<
+        //     lista[i].getDuracion().segundos<< endl;
+        lista[i].verInfo();
     }
 }
 
@@ -31,8 +34,20 @@ int main()
     imprimirRocola(rocola);
 
     //crear 3 playlist list1, listFavoritos, listaLatinos
-    // PlayList list1;
-    // PlayList listaFavoritos, listaLatinos;
+    PlayList list1;
+    PlayList listaFavoritos, listaLatinos;
+    // es la referencia a playlist sobre la cual se va hacer operaciones
+    PlayList currentList;
+
+    //Seleccione cancion
+    //1 cancion blab
+    //2 cancion blelbe
+    //3 cancion 334
+    //Seleccione sobre que playlist quiere trabajar
+    //1 Lista 1
+    //2 lista Favoritos
+    //3 lista latinos
+    
 
     //como agregar la primera cancion de la rockola en la list1
     //list1.agregarCancion(rocola[0]);
