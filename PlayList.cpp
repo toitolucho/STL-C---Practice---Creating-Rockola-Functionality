@@ -32,5 +32,7 @@ public:
     Cancion buscarCancion(string titulo)
     {
         //recorra el vector y compare los titulos
+        Cancion c;
+        return c;
     }
 };
