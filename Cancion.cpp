@@ -14,8 +14,35 @@ class Cancion
         Artista artista;
         
     public :
+    Cancion()
+    {
+        titulo = "Cancion de Despedida";
+        duracion.minutos = 3;
+        duracion.segundos = 30;
+    }
+    Cancion(string tit, int min, int seg)
+    {
+        titulo = tit;
+        duracion.minutos = min;
+        duracion.segundos = seg;
+    }
+    Cancion(string tit, Tiempo t)
+    {
+        titulo = tit;
+        duracion = t;
+    }
+    Cancion(string tit, Tiempo t, Artista art)
+    {
+        titulo = tit;
+        duracion = t;
+        artista = art;
+    }
     void verInfo()
     {
 
+    }
+    string getTitulo()
+    {
+        return titulo;
     }
 };
