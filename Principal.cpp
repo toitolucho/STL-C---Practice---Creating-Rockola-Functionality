@@ -74,6 +74,10 @@ int main()
     {
         case 1:
             //mostrar las canciones disponibles en la rockola
+            //solicite que tipo de vista desea ver 
+            //  1)general o  2)resumida
+
+            // llame a la funcion adecuada para ver la info segun la opcion
             /* code */
             break;
         case 2:

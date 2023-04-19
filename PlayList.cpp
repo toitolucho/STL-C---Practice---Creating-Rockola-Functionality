@@ -21,13 +21,17 @@ public:
         //quite una cacnion en funcion a la posicion de la cancion
         //listaCanciones.erase(listacaciones[nrocancion-1]);
     }
-    void verLista()
+    void verListaResumen()
     {
-        //mostrar las canciones
+        //mostrar las canciones Resumen
         //Nro cancion  /   Titulo   / duracion (mm:ss)
         //1         Te voy a Extraniar   03:40
         //2         It´s my Life         04:30
         //3         Bla Bla Bla          07:20
+    }
+    void VerListaCompleta()
+    {
+        // mustra el nro de cancion, titulo, duracion, artista y genero
     }
     Cancion buscarCancion(string titulo)
     {
