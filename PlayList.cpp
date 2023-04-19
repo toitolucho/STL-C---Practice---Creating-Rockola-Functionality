@@ -19,7 +19,7 @@ public:
     void eliminarCancion(int nroCancion)
     {
         //quite una cacnion en funcion a la posicion de la cancion
-        //listaCanciones.erase
+        //listaCanciones.erase(listacaciones[nrocancion-1]);
     }
     void verLista()
     {
@@ -35,4 +35,34 @@ public:
         Cancion c;
         return c;
     }
+    
+    void limpiarLista()
+    {
+        //limpiar la lista
+        //eliminar todos sus elementos
+    }
+
+    void importarLista(PlayList lista)
+    {
+        //debe copiar los valores de la playlist parametro de la funcion lista
+        // a la lista actual, utilizando las funciones definidas dentro de la clase
+        //  agregarCancion()
+    }
+    void clonarLista(PlayList lista)
+    {
+        //debe copiar los valores de la playlist parametro de la funcion lista
+        // a la lista actual, utilizando las funciones definidas dentro de la clase
+        //  limpiarLista()
+        //y luego agregarCancion() mientras recorre el vector
+    }
+
+    bool existeNroCancion(int pos)
+    {
+        bool existe =true;
+        //implementar la logica para ver si dicho indice existe en la lista de canciones
+
+        //listaCanciones.erase(2);
+        return existe;
+    }
+
 };
