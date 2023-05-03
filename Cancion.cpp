@@ -12,6 +12,7 @@ class Cancion
         string titulo;
         Tiempo duracion;
         Artista artista;
+        short puntuacion; // 1...5
         
     public :
     Cancion()
@@ -50,4 +51,22 @@ class Cancion
     {
         return titulo;
     }
+
+    void setPuntuacion(short puntos)
+    {
+        puntuacion = puntos;
+    }
+
+    int operator<(Cancion b)
+    {
+        return puntuacion<b.puntuacion;
+    }
+
+   
+
+    int operator==(Cancion b)
+    {
+        return titulo == b.titulo;
+    }
+    
 };

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <list>
 #include "Cancion.cpp"
 using namespace std;
 
@@ -8,7 +9,7 @@ class PlayList
 private:
     string nombreLista;
     string descripcion;
-    vector<Cancion> listaCanciones;
+    list<Cancion> listaCanciones;
 public:
     void agregarCancion(Cancion c)
     {
@@ -69,4 +70,23 @@ public:
         return existe;
     }
 
+    Cancion getCancionMasCorta()
+    {
+
+    }
+
+    Cancion getCancionMasLarga()
+    {
+        
+    }
+
+    list<Cancion> getTopCanciones()
+    {
+
+    }
+
+    list<Cancion> getTopCanciones(int nro)
+    {
+        listaCanciones.sort();
+    }
 };
