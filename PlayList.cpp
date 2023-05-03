@@ -19,8 +19,15 @@ public:
     }
     void eliminarCancion(int nroCancion)
     {
-        //quite una cacnion en funcion a la posicion de la cancion
-        //listaCanciones.erase(listacaciones[nrocancion-1]);
+        // una lista no tiene una forma de ingresar a un elemento directamente desde un indice, por ello es necesario recorrer la lista a travez de sus enlaces
+        //inicialmente apuntamos al primer elemento de la lista
+        auto it = listaCanciones.begin();
+        //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
+        std::advance(it, nroCancion-1);
+        //para remover una cancion, necesitamos exactamente que cancion queremos eleminar, por ello utilizamos la referencia de it y obtenemos el valor al que apunta 
+        //utilizando el operador *
+        listaCanciones.remove(*it );
+        
     }
     void verListaResumen()
     {
@@ -29,6 +36,20 @@ public:
         //1         Te voy a Extraniar   03:40
         //2         It´s my Life         04:30
         //3         Bla Bla Bla          07:20
+
+        //para ver las canciones sera necesario, hacer un recorrido, entonces necesitamos apuntar al primer elemento de la lista
+        //declaramos un iterador(un puntero) hacia el primer elemento
+        // la funcion begin() -> nos retorna el primer enlace hacia el primer elemento
+        list<Cancion>::iterator it = listaCanciones.begin();
+        //realizaremos un bucle, hasta que it apunte a nada, es decir al ultimo
+        while(it!= listaCanciones.end())
+        {
+            //recuerda que it es un puntero que ira recorriendo la lista, por ende para utilizar cualquier funcionalidad del mismo, 
+            //debemos utilizar el operador "->"
+            it->verInfo();
+            //debemos pasar al siguiente elemento, es decir pasar al siguiente enlace
+            it++;
+        }
     }
     void VerListaCompleta()
     {
@@ -45,6 +66,7 @@ public:
     {
         //limpiar la lista
         //eliminar todos sus elementos
+        listaCanciones.clear();
     }
 
     void importarLista(PlayList lista)
@@ -52,6 +74,8 @@ public:
         //debe copiar los valores de la playlist parametro de la funcion lista
         // a la lista actual, utilizando las funciones definidas dentro de la clase
         //  agregarCancion()
+
+        
     }
     void clonarLista(PlayList lista)
     {
@@ -70,23 +94,24 @@ public:
         return existe;
     }
 
-    Cancion getCancionMasCorta()
-    {
+    // Cancion getCancionMasCorta()
+    // {
 
-    }
+    // }
 
-    Cancion getCancionMasLarga()
-    {
+    // Cancion getCancionMasLarga()
+    // {
         
-    }
+    // }
 
-    list<Cancion> getTopCanciones()
-    {
+    // list<Cancion> getTopCanciones()
+    // {
+    //     //DEVUELVE LOS TOP 10 
 
-    }
+    // }
 
-    list<Cancion> getTopCanciones(int nro)
-    {
-        listaCanciones.sort();
-    }
+    // list<Cancion> getTopCanciones(int nro)
+    // {
+    //     listaCanciones.sort();
+    // }
 };
