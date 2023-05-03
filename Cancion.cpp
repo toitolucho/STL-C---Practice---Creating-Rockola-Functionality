@@ -44,6 +44,8 @@ class Cancion
     void verTodaInfo()
     {
         //Debe mostrar toda la infor de la cacncion incluyendo la de su artista
+        cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<" ";
+        artista.verInfo();
     }
 
     string getTitulo()
