@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "PlayList.cpp"
+#include "ArtistaManejadorDatosArchivo.cpp"
 using namespace std;
 
 void imprimirRocola(vector<Cancion> lista)
@@ -16,6 +17,12 @@ void imprimirRocola(vector<Cancion> lista)
 
 int main()
 {  
+    
+    //En este sector se demuestra que se cargaron archivos de texto
+    ArtistaManejadorDatosArchivo a;
+    a.cargar();
+
+
 
      //crear 3 playlist list1, listFavoritos, listaLatinos
     PlayList list1;

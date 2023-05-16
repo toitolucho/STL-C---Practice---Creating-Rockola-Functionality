@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+#ifndef GRANDPARENT_H
+#define GRANDPARENT_H
+
 enum Genero {Rock, Baladas, Cumbia, Romatica };
 class Artista
 {
@@ -24,3 +27,5 @@ class Artista
         genero = Rock;
     }
 };
+
+#endif /* GRANDPARENT_H */
