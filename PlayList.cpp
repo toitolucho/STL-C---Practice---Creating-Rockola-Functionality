@@ -2,7 +2,22 @@
 #include <vector>
 #include <list>
 #include "Cancion.cpp"
+#include <algorithm>
 using namespace std;
+
+// template <class Compare>
+// void sort (Compare comparator);
+
+struct CancionTiempoComparator
+{
+
+    bool operator ()( Cancion & c1,  Cancion & c2)
+    {
+        return c1.getTimeinSeconds() < c2.getTimeinSeconds();
+    
+    }
+};
+
 
 class PlayList
 {
@@ -13,10 +28,13 @@ private:
 public:
     void agregarCancion(Cancion c)
     {
+        //binary_search(listaCanciones.begin(), listaCanciones.end());
+        
         //validar canciones repetidas
         //si la cancion ya existe, no incorporarla
         listaCanciones.push_back(c);
     }
+
     void eliminarCancion(int nroCancion)
     {
         // una lista no tiene una forma de ingresar a un elemento directamente desde un indice, por ello es necesario recorrer la lista a travez de sus enlaces
@@ -89,29 +107,55 @@ public:
     {
         bool existe =true;
         //implementar la logica para ver si dicho indice existe en la lista de canciones
-
+        
+        auto it = listaCanciones.begin();
+        if(pos<listaCanciones.size() )
+        {
+            //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
+            std::advance(it, pos-1);
         //listaCanciones.erase(2);
+            existe = it!=listaCanciones.end();  
+        }
+               
+        existe = false;
         return existe;
     }
 
-    // Cancion getCancionMasCorta()
-    // {
-
-    // }
-
-    // Cancion getCancionMasLarga()
-    // {
+    Cancion getCancionMasCorta()
+    {
+        listaCanciones.sort(CancionTiempoComparator());
+        auto it = listaCanciones.begin();
+        //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
         
-    // }
+        return *it;
+    }
 
-    // list<Cancion> getTopCanciones()
-    // {
-    //     //DEVUELVE LOS TOP 10 
+    Cancion getCancionMasLarga()
+    {
+        listaCanciones.sort(CancionTiempoComparator());
+        listaCanciones.reverse();
+        auto it = listaCanciones.begin();
+        //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
+        
+        return *it;
+    }
 
-    // }
+    list<Cancion> getTopCanciones()
+    {
+        //DEVUELVE LOS TOP 10 
+        return getTopCanciones(10);
+    }
 
-    // list<Cancion> getTopCanciones(int nro)
-    // {
-    //     listaCanciones.sort();
-    // }
+    list<Cancion> getTopCanciones(int nro)
+    {
+        listaCanciones.sort();
+        listaCanciones.reverse();
+        list<Cancion> listAux;
+        int i = 0;
+        for(auto it =  listaCanciones.begin(); it!=listaCanciones.end() && i<nro; it++)
+        {
+            listAux.push_back(*it);
+        }
+        return listAux;
+    }
 };

@@ -40,7 +40,7 @@ class Cancion
     }
     void verInfo()
     {
-        cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<endl;
+        cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<"\t\t"<<puntuacion<<endl ;
     }
     void verTodaInfo()
     {
@@ -68,5 +68,16 @@ class Cancion
     {
         return titulo == b.titulo;
     }
+
+    int getTimeinSeconds()
+    {
+        return duracion.minutos*60 + duracion.segundos;
+    }
+    void setTiempo(int m, int s)
+    {
+        duracion.minutos = m;
+        duracion.segundos =s;
+    }
+
     
 };
