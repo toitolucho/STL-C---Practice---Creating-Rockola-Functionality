@@ -26,6 +26,9 @@ int main()
 
     //llenar un vector de 30 canciones fijas, una rocola
     vector<Cancion> rocola;
+
+    //rocola = adm.load();
+
     //rocola.push_back(Cancion("Hola mundo",3,4, Genero.rock));
     //rocola.push_back(Cancion("Bla bla ", 3545, Artista("Adolfo", "Mexico", Genero.Rock)));
     rocola.push_back(Cancion("Cancion introductoria", 4, 25));

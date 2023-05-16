@@ -9,9 +9,18 @@ class Artista
     string procedencia;
     Genero genero;
 
+
+
     public :
     void verInfo()
     {
 
+    }
+
+    Artista()
+    {
+        nombre = "Artista 1";
+        procedencia = "Canada";
+        genero = Rock;
     }
 };
