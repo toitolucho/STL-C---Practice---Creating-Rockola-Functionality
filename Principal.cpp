@@ -19,8 +19,8 @@ int main()
 {  
     
     //En este sector se demuestra que se cargaron archivos de texto
-    ArtistaManejadorDatosArchivo a;
-    a.cargar();
+    ArtistaManejadorDatos *a = new ArtistaManejadorDatosArchivo();
+    a->cargar();
 
 
 

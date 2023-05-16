@@ -8,6 +8,6 @@ class ArtistaManejadorDatos
 
     public:
         
-        virtual list<Artista> cargar();
-        virtual void guardar();
+        virtual list<Artista> cargar() = 0;
+        virtual void guardar() = 0;
 };
