@@ -25,7 +25,7 @@ class ArtistaManejadorDatosEstaticos: public ArtistaManejadorDatos
             listaArtistas.push_back(a6);
             return listaArtistas;
         }
-        void guardar()
+        void guardar(Artista artist)
         {
 
         }

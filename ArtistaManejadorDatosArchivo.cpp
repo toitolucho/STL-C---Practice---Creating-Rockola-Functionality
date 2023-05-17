@@ -19,13 +19,18 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
         }
         list<Artista> cargar()
         {
+            //lista donde se almacenaran los artistas leidos
+            list<Artista> listaArtistas;
+
             ifstream cin2("artistas.txt");
             string nombre, procedencia, genero;
-
+            //cin>>a;
             int nro =1;
             //la funcion peek() verifica que no estemos al final del archivo
             while(cin2.peek() != EOF)// corroboramos que no hayamos llegado a la ultima linea, es decir al final del archivo
             {
+                //cin2>>nombre>>procedencia>>genero;
+
                 //leemos todo lo que podamos donde se encuentra el cursor, (en la primera iteracion al principio) hasta donde encontremos una primera coma
                 getline(cin2,nombre,',');
                 // continuacion leemos hasta encontrar otra coma, que seria el dato asociado a la procednecia
@@ -34,18 +39,26 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
                 getline(cin2,genero);
                 cout<<"Nro "<< nro<< ".-  " <<nombre <<" "<< procedencia << " "<< genero <<endl;
                 nro++;
+
+                //crear el artista
+
+                // y guardarlo en una lista
             }
-            list<Artista> listaArtistas;
+
+            
             // cargar datos desde un archivo de texto
             
 
-
+            //devolucion de la lista cargada con datos
             return listaArtistas;
         }
         void guardar(Artista artist)
         {
             //declaramos una variable que permita cargar en memoria un archivo para poder guardar en el mismo
             ofstream cout2;
+            //cout<<"hola";
+            //cout<<a;
+            
             //abrimos el archivo en modo de edicion, la variable que hace referencia a dicho archivo es cout2
             cout2.open("artistas.txt", std::ios_base::app);
 

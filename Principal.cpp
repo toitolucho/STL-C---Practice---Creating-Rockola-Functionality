@@ -22,7 +22,7 @@ int main()
     ArtistaManejadorDatos *a = new ArtistaManejadorDatosArchivo();
     a->cargar();
     Artista artistita;
-    //a->guardar(artistita);
+    a->guardar(artistita);
 
 
 
@@ -36,7 +36,7 @@ int main()
     //llenar un vector de 30 canciones fijas, una rocola
     vector<Cancion> rocola;
 
-    //rocola = adm.load();
+    //rocola = cmda.cargar();
 
     //rocola.push_back(Cancion("Hola mundo",3,4, Genero.rock));
     //rocola.push_back(Cancion("Bla bla ", 3545, Artista("Adolfo", "Mexico", Genero.Rock)));

@@ -22,8 +22,8 @@ class Artista
 
     Artista()
     {
-        nombre = "Artista 1";
-        procedencia = "Canada";
+        nombre = "Shakira";
+        procedencia = "Colombia";
         genero = Rock;
     }
 
