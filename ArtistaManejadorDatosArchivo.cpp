@@ -4,6 +4,8 @@
 // #include "Artista.cpp"
 #include "ArtistaManejadorDatos.cpp"
 using namespace std;
+#include <sstream>
+#include <string>
 
 class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos 
 {
@@ -40,9 +42,24 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
 
             return listaArtistas;
         }
-        void guardar()
+        void guardar(Artista artist)
         {
+            //declaramos una variable que permita cargar en memoria un archivo para poder guardar en el mismo
+            ofstream cout2;
+            //abrimos el archivo en modo de edicion, la variable que hace referencia a dicho archivo es cout2
+            cout2.open("artistas.txt", std::ios_base::app);
 
+            //Para manipulacion y concatenacion extensa de cadenas es buena practica utilizar un stringstream para ir cargando todo en ese buffer
+            std::stringstream ss;
+
+            //ss es la variable que podria asumir el papel de una consola, es decir cin, donde le vamos pasando los datos que queremos que se vayan acumulando con el operador <<
+            ss << artist.getNombre()<< ", " << artist.getProcedencia() <<", " <<artist.getGenero();
+
+            //convertimos el buffer a una cadena nuevamente
+            std::string s = ss.str();
+
+            //imprimimos la cadena en el buffer del archivo de texto leido, con esta asignacion, garantizamos que los datos se guarden.
+            cout2<< s;
         }
 };
 

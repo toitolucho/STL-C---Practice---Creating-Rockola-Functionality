@@ -26,6 +26,16 @@ class Artista
         procedencia = "Canada";
         genero = Rock;
     }
+
+    string getNombre(){
+        return nombre;        
+    }
+    string getProcedencia(){
+        return procedencia;        
+    }
+    Genero getGenero(){
+        return genero;        
+    }
 };
 
 #endif /* GRANDPARENT_H */
