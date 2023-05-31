@@ -17,7 +17,7 @@ class Artista
     public :
     void verInfo()
     {
-
+        cout<<nombre<<" "<<procedencia<<" "<<genero<<endl;
     }
 
     Artista()
@@ -25,6 +25,27 @@ class Artista
         nombre = "Shakira";
         procedencia = "Colombia";
         genero = Rock;
+    }
+
+    Artista(string nom, string pro, Genero gen)
+    {
+        nombre = nombre;
+        procedencia = procedencia;
+        genero = gen;
+    }
+
+    Artista(string nom, string pro, string gen)
+    {
+        nombre = nom;
+        procedencia = pro;
+        if(gen == "Rock")
+            genero = Rock;
+        if(gen == "Baladas")
+            genero = Baladas;
+        if(gen == "Cumbia")
+            genero = Cumbia;
+        if(gen == "Romatica")
+            genero = Genero::Romatica;
     }
 
     string getNombre(){

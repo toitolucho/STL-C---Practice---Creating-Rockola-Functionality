@@ -1,6 +1,10 @@
 #include <iostream>
 #include "Artista.cpp"
 using namespace std;
+
+#ifndef ARTISTA_H
+#define ARTISTA_H
+
 struct Tiempo
 {
     int minutos;
@@ -38,6 +42,21 @@ class Cancion
         duracion = t;
         artista = art;
     }
+    Cancion(string tit, Tiempo t, Artista &art, int punt)
+    {
+        titulo = tit;
+        duracion = t;
+        artista = art;
+        puntuacion = punt;
+    }
+    Cancion(string tit, int min, int seg, Artista &art, int punt)
+    {
+        titulo = tit;
+        duracion.minutos = min;
+        duracion.segundos = seg;
+        artista = art;
+        puntuacion = punt;
+    }
     void verInfo()
     {
         cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<"\t\t"<<puntuacion<<endl ;
@@ -45,6 +64,7 @@ class Cancion
     void verTodaInfo()
     {
         //Debe mostrar toda la infor de la cacncion incluyendo la de su artista
+         cout<<titulo<<" "<<duracion.minutos<< " : "<<duracion.segundos<<"\t\t"<<puntuacion<<"\t"<< artista.getNombre()<<  endl ;
     }
 
     string getTitulo()
@@ -81,3 +101,5 @@ class Cancion
 
     
 };
+
+#endif /* ARTISTA_H */

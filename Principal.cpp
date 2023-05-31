@@ -2,6 +2,7 @@
 #include <vector>
 #include "PlayList.cpp"
 #include "ArtistaManejadorDatosArchivo.cpp"
+#include "CancionManejadorDatosArchivo.cpp"
 using namespace std;
 
 void imprimirRocola(vector<Cancion> lista)
@@ -20,10 +21,12 @@ int main()
     
     //En este sector se demuestra que se cargaron archivos de texto
     ArtistaManejadorDatos *a = new ArtistaManejadorDatosArchivo();
-    a->cargar();
-    Artista artistita;
-    a->guardar(artistita);
+    // a->cargar();
+    // Artista artistita;
+    // a->guardar(artistita);
 
+    CancionManejadorDatos *b = new CancionManejadorDatosArchivo(*a);
+    b->cargar();
 
 
      //crear 3 playlist list1, listFavoritos, listaLatinos
@@ -59,24 +62,24 @@ int main()
     
 
 
-    cout<<"Nro Canciones inicio "<<listita.size()<<endl;
-    int nroCancion = 0;
-    auto it = listita.begin();
-        //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
-    std::advance(it, nroCancion);
-    //para remover una cancion, necesitamos exactamente que cancion queremos eleminar, por ello utilizamos la referencia de it y obtenemos el valor al que apunta 
-    //utilizando el operador *
-    // listita.remove(*it );
-    // cout<<"Nro Canciones fin "<<listita.size()<<endl;
+    // cout<<"Nro Canciones inicio "<<listita.size()<<endl;
+    // int nroCancion = 0;
+    // auto it = listita.begin();
+    //     //con la funcion *advance* recorremos los enlaces, hasta la posicion necesaria, que en nuestro caso es el nroCancion-1
+    // std::advance(it, nroCancion);
+    // //para remover una cancion, necesitamos exactamente que cancion queremos eleminar, por ello utilizamos la referencia de it y obtenemos el valor al que apunta 
+    // //utilizando el operador *
+    // // listita.remove(*it );
+    // // cout<<"Nro Canciones fin "<<listita.size()<<endl;
 
-    listita.sort(CancionTiempoComparator());
-    cout<<"CAncion mas corta  "; listita.begin()->verInfo();
-    listita.reverse();
-    cout<<"CAncion mas larga  "; listita.begin()->verInfo();
-    for(auto it = listita.begin(); it!=listita.end(); it++)
-    {
-        it->verInfo();
-    }
+    // listita.sort(CancionTiempoComparator());
+    // cout<<"CAncion mas corta  "; listita.begin()->verInfo();
+    // listita.reverse();
+    // cout<<"CAncion mas larga  "; listita.begin()->verInfo();
+    // for(auto it = listita.begin(); it!=listita.end(); it++)
+    // {
+    //     it->verInfo();
+    // }
 
     int opcion, num, numLista;
     //cout<<"Hola Mundo"<<endl;

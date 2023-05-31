@@ -37,11 +37,16 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
                 getline(cin2,procedencia,',');
                 // finalmente leemos desde donde este el cursor, toda la linea, que seria el resto de la informacion asociada al genero
                 getline(cin2,genero);
-                cout<<"Nro "<< nro<< ".-  " <<nombre <<" "<< procedencia << " "<< genero <<endl;
+                // cout<<"Nro "<< nro<< ".-  " <<nombre <<" "<< procedencia << " "<< genero <<endl;
                 nro++;
 
-                //crear el artista
 
+                //crear el art()ista
+                //Artista a (nombre,genero,procede)
+                 Artista art(nombre, procedencia,   genero);
+
+                 listaArtistas.push_back(art);
+                //lista.pushback(a)
                 // y guardarlo en una lista
             }
 
@@ -50,6 +55,7 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
             
 
             //devolucion de la lista cargada con datos
+            cout<<"Nro de Artistas leidos "<<listaArtistas.size()<<endl;
             return listaArtistas;
         }
         void guardar(Artista artist)
@@ -73,6 +79,7 @@ class ArtistaManejadorDatosArchivo: public ArtistaManejadorDatos
 
             //imprimimos la cadena en el buffer del archivo de texto leido, con esta asignacion, garantizamos que los datos se guarden.
             cout2<< s;
+            cout2<<endl;
         }
 };
 
