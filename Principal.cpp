@@ -3,6 +3,7 @@
 #include "PlayList.cpp"
 #include "ArtistaManejadorDatosArchivo.cpp"
 #include "CancionManejadorDatosArchivo.cpp"
+#include "DataManager.cpp"
 using namespace std;
 
 void imprimirRocola(vector<Cancion> lista)
@@ -19,6 +20,9 @@ void imprimirRocola(vector<Cancion> lista)
 int main()
 {  
     
+    // Rocola::loadData();
+    // Rocola::start();
+
     //En este sector se demuestra que se cargaron archivos de texto
     ArtistaManejadorDatos *a = new ArtistaManejadorDatosArchivo();
     // a->cargar();
@@ -26,7 +30,15 @@ int main()
     // a->guardar(artistita);
 
     CancionManejadorDatos *b = new CancionManejadorDatosArchivo(*a);
-    b->cargar();
+
+    DataManager *dm1,*dm2;
+     dm1 = DataManager::getInstance(*a,*b);
+    // dm2 = DataManager::getInstance(*a,*b);
+
+    cout<<"Direccion de dm1 "<<dm1<<endl;
+    cout<<"Direccion de dm2 "<<dm2<<endl;
+
+    // b->cargar();
 
 
      //crear 3 playlist list1, listFavoritos, listaLatinos
