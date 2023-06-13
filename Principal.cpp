@@ -25,6 +25,7 @@ int main()
 
     //En este sector se demuestra que se cargaron archivos de texto
     ArtistaManejadorDatos *a = new ArtistaManejadorDatosArchivo();
+    // ArtistaManejadorDatos *a = new ArtistaManejadorDatoEstatico();
     // a->cargar();
     // Artista artistita;
     // a->guardar(artistita);

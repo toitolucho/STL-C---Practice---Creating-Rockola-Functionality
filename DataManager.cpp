@@ -37,5 +37,11 @@ class DataManager
             return instance;  
         }
 
+       ArtistaManejadorDatos* getArtistaManager()
+       {
+            //artistaDataManager->cargar()
+            return artistaDataManager;
+       } 
+
 };
 DataManager* DataManager::instance= nullptr;
