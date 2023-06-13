@@ -30,10 +30,10 @@ int main()
     // a->guardar(artistita);
 
     CancionManejadorDatos *b = new CancionManejadorDatosArchivo(*a);
-
+    
     DataManager *dm1,*dm2;
-     dm1 = DataManager::getInstance(*a,*b);
-    // dm2 = DataManager::getInstance(*a,*b);
+      dm1 = DataManager::getInstance(*a,*b);
+      dm2 = DataManager::getInstance(*a,*b);
 
     cout<<"Direccion de dm1 "<<dm1<<endl;
     cout<<"Direccion de dm2 "<<dm2<<endl;

@@ -31,9 +31,11 @@ class DataManager
         {
             if(instance == nullptr)
             {
-                instance = new DataManager(amd,cmd);
+                cout<<"creando instancia"<<endl;
+                 instance = new DataManager(amd,cmd);
             } 
             return instance;  
         }
 
 };
+DataManager* DataManager::instance= nullptr;
