@@ -39,6 +39,28 @@ int main()
     cout<<"Direccion de dm1 "<<dm1<<endl;
     cout<<"Direccion de dm2 "<<dm2<<endl;
 
+
+    /*
+    Seleccion el tipo de fuente datos
+1) Estico
+2) Archivo
+3) FuenteX
+
+DataManager *dm;
+CancionManejadorDatos *a;
+ArtistaManejadorDatos *b;
+si opcion=1
+   a = new CancionManejadorDatosEstaticos();
+   b = new ArtistaManejadorDatosEStaticos();
+si opcion= 2
+   a = new CancionManejadorDatosArchivo();
+   b = new ArtistaManejadorDatosArchivo();
+si opcion = 3
+   a = new CancionManejadorDatosFuenteX();
+   b = new ArtistaManejadorDatosFuenteX();
+dm = DataManager::getInstance(a,b)
+    */
+
     // b->cargar();
 
 
